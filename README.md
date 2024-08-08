@@ -1,2 +1,3 @@
-# MassTransitWorks
-MassTransit kullanımı ile ilişkili örneklere yer vermek istediğim repodur. 
+# MassTransit Works
+
+[Distributed Systems Challenges](https://github.com/buraksenyurt/DistributedChallenge) reposunda birden fazla sistemin birbirlerini kullandığı ortak bir süreç işletiliyor. Bu süreçte Rabbit MQ ve hatta Redis Streaming ile event yönetimi işletilmekte. Belli bir olay verisine ilişkin business nesne örneğinin çalıştırılmasında ise kendi yazdığım basit bir mekanizma çalıştırılıyor. [MassTransit](https://masstransit.io/) paketinin özellikle bu tür senaryolarda mesajları yönetmek, alıp vermek gibi açılardan daha kolay bir kullanım sağladığı ifade etmekte. Hiç Masstransit ile çalışmadığımdan konuyu önce burada ele almayı sonra gerekli görürsem Distributed System Challenges reposuna entegre etmeyi planlıyorum.
