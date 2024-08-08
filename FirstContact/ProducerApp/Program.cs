@@ -5,8 +5,8 @@ var yellowBus = Bus.Factory.CreateUsingRabbitMq(cfg =>
 {
     cfg.Host("localhost", "/", h =>
     {
-        h.Username("guest");
-        h.Password("guest");
+        h.Username("scothtiger");
+        h.Password("123456");
     });
 });
 
@@ -16,6 +16,7 @@ try
 {
     Console.WriteLine("Press any key to send message");
     Console.ReadLine();
+
     var message = new NewGameScore
     {
         GameID = 1,
