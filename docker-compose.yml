@@ -1,0 +1,10 @@
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: masst-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: scothtiger
+      RABBITMQ_DEFAULT_PASS: 123456
+    ports:
+      - "5672:5672"
+      - "15672:15672"
