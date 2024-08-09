@@ -9,7 +9,7 @@ var yellowBus = Bus.Factory.CreateUsingRabbitMq(cfg =>
         h.Password("123456");
     });
 
-    cfg.ReceiveEndpoint("gamers_score_line", e =>
+    cfg.ReceiveEndpoint("msg_gamers_score", e =>
     {
         e.Consumer<ConsumerService>();
     });
@@ -19,7 +19,7 @@ await yellowBus.StartAsync();
 
 try
 {
-    Console.WriteLine("Press any key to exit");
+    Console.WriteLine("I am listening the event messages.\nPress any key to exit program.");
     await Task.Run(Console.ReadKey);
 }
 catch (Exception exp)
