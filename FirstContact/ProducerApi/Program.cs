@@ -1,7 +1,13 @@
 using CommonLib;
 using MassTransit;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console(outputTemplate: "[{Timestamp:dd.MM.yyyy-HH:mm:ss} {Level:u4}] {Message:lj}{NewLine}{Exception}")
+    .CreateLogger();
+builder.Host.UseSerilog();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -28,9 +34,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapPost("/publish-score", async (NewGameScore newGameScore, IBus bus) =>
+app.MapPost("/publish-score", async (NewGameScore payload, IBus bus) =>
 {
-    await bus.Publish(newGameScore);
+    Log.Information("Publishing new game score for PlayerID {PlayerID} with score {}", payload.PlayerID, payload.Point);
+    await bus.Publish(payload);
+    Log.Information("Score published successfully!");
+
     return Results.Ok("Score published successfully!");
 })
 .WithName("PublishGamersScore")
