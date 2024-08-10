@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProducerApi", "ProducerApi\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "AuthService\AuthService.csproj", "{DDBA2869-8966-43D3-91CD-25905C249BAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizApp", "QuizApp\QuizApp.csproj", "{DA7F5694-123C-49A3-8D96-4896EF688148}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{DDBA2869-8966-43D3-91CD-25905C249BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDBA2869-8966-43D3-91CD-25905C249BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDBA2869-8966-43D3-91CD-25905C249BAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA7F5694-123C-49A3-8D96-4896EF688148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7F5694-123C-49A3-8D96-4896EF688148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7F5694-123C-49A3-8D96-4896EF688148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA7F5694-123C-49A3-8D96-4896EF688148}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
