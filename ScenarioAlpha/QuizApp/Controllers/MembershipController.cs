@@ -1,13 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http.Headers;
 using QuizApp.Models;
 using Microsoft.AspNetCore.Authorization;
 
-public class MembershipController(IHttpClientFactory clientFactory, IConfiguration configuration, Logger<MembershipController> logger) : Controller
+namespace QuizApp.Controllers;
+
+public class MembershipController(IHttpClientFactory clientFactory, IConfiguration configuration, ILogger<MembershipController> logger) : Controller
 {
     private readonly IHttpClientFactory _clientFactory = clientFactory;
     private readonly IConfiguration _configuration = configuration;
-    private readonly Logger<MembershipController> _logger = logger;
+    private readonly ILogger<MembershipController> _logger = logger;
 
     [HttpGet]
     [AllowAnonymous]
@@ -21,7 +22,7 @@ public class MembershipController(IHttpClientFactory clientFactory, IConfigurati
     public async Task<IActionResult> Login(LoginViewModel loginViewModel)
     {
         var client = _clientFactory.CreateClient();
-        var loginRequest = new { MemberName = loginViewModel.MemberName, Password = loginViewModel.Password };
+        var loginRequest = new { loginViewModel.MemberName, loginViewModel.Password };
         _logger.LogInformation("Login request for {MemberName}", loginRequest.MemberName);
         var response = await client.PostAsJsonAsync($"{_configuration["AuthService:BaseUrl"]}/login", loginRequest);
 

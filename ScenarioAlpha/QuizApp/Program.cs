@@ -66,8 +66,20 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.Use(async (context, next) =>
+{
+    var token = context.Session.GetString("JWToken");
+    if (!string.IsNullOrEmpty(token))
+    {
+        context.Request.Headers.Append("Authorization", $"Bearer {token}");
+    }
+
+    await next.Invoke();
+});
 
 app.MapControllerRoute(
     name: "default",
