@@ -1,6 +1,9 @@
 use rand::prelude::SliceRandom;
 use rand::thread_rng;
-use std::io::{stdin, stdout, Write};
+use serde::Deserialize;
+use serde_json::from_reader;
+use std::fs::File;
+use std::io::{stdin, stdout, Error, Write};
 
 fn main() {
     let mut game = Game::default();
@@ -12,7 +15,7 @@ fn main() {
         .read_line(&mut game.player_name)
         .expect("Okuma hatası.");
     println!("Yarışmamız hoş geldin {}", game.player_name);
-    let mut questions = load_questions();
+    let mut questions = load_questions("data.json").expect("Sorular okunamadı");
     run_quiz(&mut questions, &mut game);
     println!("Yarışma sona erdi. Toplam puanın...{}", game.total_score);
 }
@@ -23,7 +26,7 @@ struct Game {
     total_score: i32,
 }
 
-#[derive(Default)]
+#[derive(Default, Deserialize)]
 struct Question {
     question: String,
     answer: String,
@@ -53,52 +56,8 @@ fn run_quiz(questions: &mut Vec<Question>, game: &mut Game) {
     }
 }
 
-fn load_questions() -> Vec<Question> {
-    vec![
-        Question {
-            question: String::from("2024 Olimpiyat oyunları hangi şehirde yapılıyor?"),
-            answer: String::from("Paris"),
-            point: 3,
-        },
-        Question {
-            question: String::from("Dünyanın en kalabalık ülkesidir."),
-            answer: String::from("Çin"),
-            point: 5,
-        },
-        Question {
-            question: String::from("Dünyanın en uzun nehridir."),
-            answer: String::from("Nil"),
-            point: 7,
-        },
-        Question {
-            question: String::from("Dünyanın en büyük çölü Sahra'nın bulunduğu kıtadı."),
-            answer: String::from("Afrika"),
-            point: 9,
-        },
-        Question {
-            question: String::from("Japonya'nın başkentidir."),
-            answer: String::from("Tokyo"),
-            point: 3,
-        },
-        Question {
-            question: String::from("Dünyanın en büyük okyanusudur."),
-            answer: String::from("Pasifik"),
-            point: 6,
-        },
-        Question {
-            question: String::from("Dünyanın en çok doğal gölü bulunan ülkesidir."),
-            answer: String::from("Kanada"),
-            point: 9,
-        },
-        Question {
-            question: String::from("Dünyanın yüz ölçümü açısından en küçük ülkesidir."),
-            answer: String::from("Vatikan"),
-            point: 6,
-        },
-        Question {
-            question: String::from("Petra Antik Kentinin bulunduğu ülkedir"),
-            answer: String::from("Ürdün"),
-            point: 10,
-        },
-    ]
+fn load_questions(file_path: &str) -> Result<Vec<Question>, Error> {
+    let file = File::open(file_path)?;
+    let questions = from_reader(file)?;
+    Ok(questions)
 }

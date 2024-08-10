@@ -1,0 +1,62 @@
+[
+  {
+    "question":"2024 Olimpiyat oyunları hangi şehirde yapılıyor?",
+    "answer":"Paris",
+    "point":3
+  },
+  {
+    "question":"Dünyanın en kalabalık ülkesidir.",
+    "answer":"Çin",
+    "point":5
+  },
+  {
+    "question":"Dünyanın en uzun nehridir.",
+    "answer":"Nil",
+    "point":7
+  },
+  {
+    "question":"Dünyanın en büyük çölü Sahra'nın bulunduğu kıtadır.",
+    "answer":"Afrika",
+    "point":9
+  },
+  {
+    "question":"Japonya'nın başkentidir.",
+    "answer":"Tokyo",
+    "point":3
+  },
+  {
+    "question":"Dünyanın en büyük okyanusudur.",
+    "answer":"Pasifik",
+    "point":6
+  },
+  {
+    "question":"Dünyanın en çok doğal gölü bulunan ülkesidir.",
+    "answer":"Kanada",
+    "point":9
+  },
+  {
+    "question":"Dünyanın yüz ölçümü açısından en küçük ülkesidir.",
+    "answer":"Vatikan",
+    "point":6
+  },
+  {
+    "question":"Petra Antik Kentinin bulunduğu ülkedir.",
+    "answer":"Ürdün",
+    "point":10
+  },
+  {
+    "question":"Avrupa ile Asya'yı birbirinden ayıran sıra dağdır.",
+    "answer":"Ural",
+    "point":10
+  },
+  {
+    "question":"Dünyanın en büyük çölüdür.",
+    "answer":"Antartika",
+    "point":8
+  },
+  {
+    "question":"Taç Mahal'ın bulunduğu ülkedir.",
+    "answer":"Hindistan",
+    "point":10
+  }
+]
