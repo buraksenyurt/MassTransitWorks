@@ -1,0 +1,19 @@
+@AuthService_HostAddress = http://localhost:5280
+
+### Valid User Login Request
+POST {{AuthService_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "MemberName": "jhondoe",
+  "Password": "123456"
+}
+
+### Invalid User Login Request
+POST {{AuthService_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "MemberName": "jacksparrow",
+  "Password": "HiHiCaptain"
+}
