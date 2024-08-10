@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+ScenarioAlpha/contest-app/.idea/
+ScenarioAlpha/contest-app/target/
+ScenarioAlpha/contest-app/Cargo.lock
