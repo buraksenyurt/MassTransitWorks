@@ -1,62 +1,62 @@
 [
   {
-    "question":"2024 Olimpiyat oyunları hangi şehirde yapılıyor?",
-    "answer":"Paris",
-    "point":3
+    "text": "2024 Olimpiyat oyunları hangi şehirde yapılıyor?",
+    "answer": "Paris",
+    "point": 3
   },
   {
-    "question":"Dünyanın en kalabalık ülkesidir.",
-    "answer":"Çin",
-    "point":5
+    "text": "Dünyanın en kalabalık ülkesidir.",
+    "answer": "Çin",
+    "point": 5
   },
   {
-    "question":"Dünyanın en uzun nehridir.",
-    "answer":"Nil",
-    "point":7
+    "text": "Dünyanın en uzun nehridir.",
+    "answer": "Nil",
+    "point": 7
   },
   {
-    "question":"Sahra'nın bulunduğu kıtadır.",
-    "answer":"Afrika",
-    "point":9
+    "text": "Sahra'nın bulunduğu kıtadır.",
+    "answer": "Afrika",
+    "point": 9
   },
   {
-    "question":"Japonya'nın başkentidir.",
-    "answer":"Tokyo",
-    "point":3
+    "text": "Japonya'nın başkentidir.",
+    "answer": "Tokyo",
+    "point": 3
   },
   {
-    "question":"Dünyanın en büyük okyanusudur.",
-    "answer":"Pasifik",
-    "point":6
+    "text": "Dünyanın en büyük okyanusudur.",
+    "answer": "Pasifik",
+    "point": 6
   },
   {
-    "question":"Dünyanın en çok doğal gölü bulunan ülkesidir.",
-    "answer":"Kanada",
-    "point":9
+    "text": "Dünyanın en çok doğal gölü bulunan ülkesidir.",
+    "answer": "Kanada",
+    "point": 9
   },
   {
-    "question":"Dünyanın yüz ölçümü açısından en küçük ülkesidir.",
-    "answer":"Vatikan",
-    "point":6
+    "text": "Dünyanın yüz ölçümü açısından en küçük ülkesidir.",
+    "answer": "Vatikan",
+    "point": 6
   },
   {
-    "question":"Petra Antik Kentinin bulunduğu ülkedir.",
-    "answer":"Ürdün",
-    "point":10
+    "text": "Petra Antik Kentinin bulunduğu ülkedir.",
+    "answer": "Ürdün",
+    "point": 10
   },
   {
-    "question":"Avrupa ile Asya'yı birbirinden ayıran sıra dağdır.",
-    "answer":"Ural",
-    "point":10
+    "text": "Avrupa ile Asya'yı birbirinden ayıran sıra dağdır.",
+    "answer": "Ural",
+    "point": 10
   },
   {
-    "question":"Dünyanın en büyük çölüdür.",
-    "answer":"Antartika",
-    "point":8
+    "text": "Dünyanın en büyük çölüdür.",
+    "answer": "Antartika",
+    "point": 8
   },
   {
-    "question":"Taç Mahal'ın bulunduğu ülkedir.",
-    "answer":"Hindistan",
-    "point":10
+    "text": "Taç Mahal'ın bulunduğu ülkedir.",
+    "answer": "Hindistan",
+    "point": 10
   }
 ]
