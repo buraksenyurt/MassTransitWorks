@@ -1,12 +1,12 @@
 ﻿using System.Text.Json;
 using CommonLib;
-using System.Linq;
+using MassTransit;
 
 namespace GameApp;
 
 class Program
 {
-    static void Main()
+    static async Task Main()
     {
         Game game = new()
         {
@@ -20,7 +20,7 @@ class Program
         Console.WriteLine("Welcome to the world's most popular geography quiz!");
         Console.WriteLine("What is your name?");
         player.Nickname = Console.ReadLine();
-        Console.WriteLine($"Welcome, {player.Nickname}");
+        Console.WriteLine($"Welcome, {player.Nickname}\n");
         var questions = LoadQuestions(Path.Combine(Environment.CurrentDirectory, "Questions.json"));
         if (!questions.Any())
         {
@@ -39,6 +39,8 @@ class Program
         Console.WriteLine($"The quiz is over, dear '{player.Nickname}'");
         Console.WriteLine($"You scored a total of {newGameScore.Point} points.");
         Console.WriteLine("See you next time.");
+
+        await PublishMessage(newGameScore);
     }
 
     static IEnumerable<Question> LoadQuestions(string filePath)
@@ -77,5 +79,29 @@ class Program
             }
         }
         return score;
+    }
+
+    static async Task PublishMessage(NewGameScore newGameScore)
+    {
+        var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
+        {
+            cfg.Host("rabbitmq://localhost", h =>
+            {
+                h.Username("scothtiger");
+                h.Password("123456");
+            });
+        });
+
+        await busControl.StartAsync();
+
+        try
+        {
+            await busControl.Publish(newGameScore);
+            Console.WriteLine("NewGameScore message sent to RabbitMQ.");
+        }
+        finally
+        {
+            await busControl.StopAsync();
+        }
     }
 }
