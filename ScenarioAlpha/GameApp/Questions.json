@@ -1,62 +1,62 @@
 [
   {
-    "text": "2024 Olimpiyat oyunları hangi şehirde yapılıyor?",
+    "text": "In which city are the 2024 Olympic Games being held?",
     "answer": "Paris",
     "point": 3
   },
   {
-    "text": "Dünyanın en kalabalık ülkesidir.",
-    "answer": "Çin",
+    "text": "It is the most populous country in the world.",
+    "answer": "China",
     "point": 5
   },
   {
-    "text": "Dünyanın en uzun nehridir.",
-    "answer": "Nil",
+    "text": "It is the longest river in the world.",
+    "answer": "Nile",
     "point": 7
   },
   {
-    "text": "Sahra'nın bulunduğu kıtadır.",
-    "answer": "Afrika",
+    "text": "The Sahara Desert is located on this continent.",
+    "answer": "Africa",
     "point": 9
   },
   {
-    "text": "Japonya'nın başkentidir.",
+    "text": "It is the capital city of Japan.",
     "answer": "Tokyo",
     "point": 3
   },
   {
-    "text": "Dünyanın en büyük okyanusudur.",
-    "answer": "Pasifik",
+    "text": "It is the largest ocean in the world.",
+    "answer": "Pacific",
     "point": 6
   },
   {
-    "text": "Dünyanın en çok doğal gölü bulunan ülkesidir.",
-    "answer": "Kanada",
+    "text": "This country has the most natural lakes in the world.",
+    "answer": "Canada",
     "point": 9
   },
   {
-    "text": "Dünyanın yüz ölçümü açısından en küçük ülkesidir.",
-    "answer": "Vatikan",
+    "text": "It is the smallest country in the world by area.",
+    "answer": "Vatican",
     "point": 6
   },
   {
-    "text": "Petra Antik Kentinin bulunduğu ülkedir.",
-    "answer": "Ürdün",
+    "text": "Petra Ancient City is located in this country.",
+    "answer": "Jordan",
     "point": 10
   },
   {
-    "text": "Avrupa ile Asya'yı birbirinden ayıran sıra dağdır.",
+    "text": "This mountain range separates Europe and Asia.",
     "answer": "Ural",
     "point": 10
   },
   {
-    "text": "Dünyanın en büyük çölüdür.",
-    "answer": "Antartika",
+    "text": "It is the largest desert in the world.",
+    "answer": "Antarctica",
     "point": 8
   },
   {
-    "text": "Taç Mahal'ın bulunduğu ülkedir.",
-    "answer": "Hindistan",
+    "text": "The Taj Mahal is located in this country.",
+    "answer": "India",
     "point": 10
   }
 ]

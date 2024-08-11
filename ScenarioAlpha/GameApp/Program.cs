@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using CommonLib;
+using System.Linq;
 
 namespace GameApp;
 
@@ -10,34 +11,34 @@ class Program
         Game game = new()
         {
             GameID = 16,
-            Name = "Coğrafya Oyunu"
+            Name = "Geography Quiz"
         };
         Player player = new()
         {
             PlayerID = 23
         };
-        Console.WriteLine("Dünyanın en popüler coğrafya bilgi yarışmasına hoşgeldin");
-        Console.WriteLine("Hangi isimle yarışmaya katılıyorsun?");
+        Console.WriteLine("Welcome to the world's most popular geography quiz!");
+        Console.WriteLine("What is your name?");
         player.Nickname = Console.ReadLine();
-        Console.WriteLine($"Hoşgeldin {player.Nickname}");
+        Console.WriteLine($"Welcome, {player.Nickname}");
         var questions = LoadQuestions(Path.Combine(Environment.CurrentDirectory, "Questions.json"));
         if (!questions.Any())
         {
-            Console.WriteLine("Sorular yüklenemedi. Lütfen oyun geliştirici ile irtibata geçin.");
+            Console.WriteLine("Questions could not be loaded. Please contact the game developer.");
         }
         player.GameScore = RunGame(questions);
 
         var newGameScore = new NewGameScore(
-            game.GameID
-            , player.PlayerID
-            , player.Nickname ?? "Anonymous"
-            , player.GameScore
-            , DateTime.Now
+            game.GameID,
+            player.PlayerID,
+            player.Nickname ?? "Anonymous",
+            player.GameScore,
+            DateTime.Now
         );
 
-        Console.WriteLine($"Yarışma sona erdi sevgili '{player.Nickname}'");
-        Console.WriteLine($"Toplam {newGameScore.Point} puan kazandın.");
-        Console.WriteLine("Tekrardan görüşmek üzere.");
+        Console.WriteLine($"The quiz is over, dear '{player.Nickname}'");
+        Console.WriteLine($"You scored a total of {newGameScore.Point} points.");
+        Console.WriteLine("See you next time.");
     }
 
     static IEnumerable<Question> LoadQuestions(string filePath)
@@ -55,20 +56,23 @@ class Program
     {
         double score = 0;
         int counter = 1;
-        foreach (Question q in questions)
+
+        var shuffledQuestions = questions.OrderBy(q => Guid.NewGuid()).ToList();
+
+        foreach (Question q in shuffledQuestions)
         {
             Console.WriteLine($"{counter} - {q.Text}");
             counter++;
-            Console.WriteLine("Cevabın nedir ?");
-            string answer = Console.ReadLine() ?? "cevapsız";
+            Console.WriteLine("What is your answer?");
+            string answer = Console.ReadLine() ?? "no answer";
             if (q.Answer.ToLower().Equals(answer.Trim().ToLower()))
             {
-                Console.WriteLine($"Tebrikler, bildin. Tam {q.Point} puan kazandın.");
+                Console.WriteLine($"Congratulations, you got it right. You earned {q.Point} points.");
                 score += q.Point;
             }
             else
             {
-                Console.WriteLine($"Maalesef bilemedin. Doğru cevap '{q.Answer}' olacaktı.");
+                Console.WriteLine($"Sorry, that's incorrect. The correct answer was '{q.Answer}'.");
                 score -= 1;
             }
         }
